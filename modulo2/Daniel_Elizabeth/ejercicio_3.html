@@ -1,0 +1,116 @@
+<html>
+<head>
+</head>
+<style type "text/css">
+#contenedor
+{
+	background-color:#000000;
+	width:800px;
+	height:1000px;
+	border-radius:15px;
+	box-shadow:15px 15px 15px #BDBDBD;
+	margin: 0 auto;
+}
+#baner
+{
+	background-color:#F2F5A9;
+	width:100%;
+	height:300px;
+	border-radius:15px;
+	
+}
+#imagen
+{
+	background-color:#FACC2E;
+	width:400px;
+	height:350px;
+	border-radius:15px;
+	float:left;
+
+}
+#video
+{
+	background-color:#000000;
+	width:400px;
+	height:350px;
+	border-radius:15px;
+	float:left;
+
+}
+#animacion
+{
+	background-color:#F7FE2E;
+	width:400px;
+	height:350px;
+	border-radius:15px;
+	float:left;
+}
+#audio
+{
+	background-color:#C8FE2E;
+	width:400px;
+	height:350px;
+	border-radius:15px;
+	float:left;
+}
+</style>
+<div id="contenedor" >
+	<div id="baner">
+		<script language="JavaScript1.1">
+var imagenes=new Array() 
+imagenes[0]="imagen.jpg"
+imagenes[1]="imagen1.png"
+imagenes[2]="imagen2.jpg"
+
+var tiempo=3000 
+  
+var contador =1;
+
+var cambiarImagen=new Array()
+for (i=0;i<imagenes.length;i++){
+cambiarImagen[i]=new Image()
+cambiarImagen[i].src=imagenes[i]
+}
+
+function movecube(){
+if (window.createPopup)
+cube.filters[0].apply()
+document.images.cube.src=cambiarImagen[contador].src;
+if (window.createPopup)
+cube.filters[0].play()
+contador++;
+if (contador==cambiarImagen.length)
+contador=0;
+setTimeout("movecube()",tiempo)
+}
+
+window.onload=new Function("setTimeout('movecube()',tiempo)")
+</script> <img name="cube" style="filter:progid:DXImageTransform.Microsoft.Stretch(stretchStyle=&#39;PUSH&#39;)" /> 
+	</div>
+
+
+
+	<div id="imagen">
+		<img src="tigre.png" />
+	</div>
+	<div id="video">
+		<class="video-responsive"/>
+		<iframe width="400" height="350" src="https://www.youtube.com/embed/g5WgT55k7aE" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div id="animacion">
+		<img src="tigre.gif" />
+	</div>
+	<div id="audio">
+		<audio id="mireproductor" src="tigre.mp3"></audio>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p ALIGN=center><font color="blue" size = 9 > AUDIO TIGRE Y ELEFANTE</font>
+			<p>&nbsp;</p>
+<div>
+<p ALIGN=center>
+	<button onclick="document.getElementById('mireproductor').play()">Play</button>
+    <button onclick="document.getElementById('mireproductor').pause()">Pausa</button>
+    <button onclick="document.getElementById('mireproductor').load()">Stop</button>
+</div> 	
+</div>
+</html>
